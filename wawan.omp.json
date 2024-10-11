@@ -1,0 +1,60 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "#ffafd2",
+          "_leading_diamond": "<#ffafd2>{</>",
+          "properties": {
+            "folder_icon": "\uf07b",
+            "folder_separator_icon": "/",
+            "home_icon": "home",
+            "style": "agnoster_full"
+          },
+          "style": "diamond",
+          "template": " \ue5ff {{ .Path }} ",
+          "_trailing_diamond": "<#ffafd2>}</>",
+          "type": "path"
+        },
+        {
+          "foreground": "#ffafd2",
+          "style": "plain",
+          "template": "{{ .HEAD }}",
+          "type": "git"
+        },
+        {
+          "foreground": "#A9FFB4",
+          "foreground_templates": ["{{ if gt .Code 0 }}#ef5350{{ end }}"],
+          "properties": {
+            "always_enabled": true
+          },
+          "style": "plain",
+          "template": "\n<#ffafd2> \ue285 </>",
+          "type": "status"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "type": "prompt",
+      "segments": [
+        {
+          "style": "plain",
+          "template": " "
+        }
+      ]
+    }
+  ],
+  "console_title_template": "{{ .Folder }}",
+  "transient_prompt": {
+    "background": "transparent",
+    "foreground": "#FEF5ED",
+    "template": "\ue285 "
+  },
+  "version": 2
+}
